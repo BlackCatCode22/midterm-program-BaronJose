@@ -4,16 +4,45 @@
 #include <string>
 #include <random>
 #include <vector>
+#include <ctime>
+#include <chrono>
+#include <sstream>
+#include <iomanip>
 using namespace std;
+
+// Returns a random arrival date in the format "MM DD, YYYY"
+std::string getRandomArrivalDate()
+{
+    // Convert start and end dates to time_t
+    tm tm_start = {};
+    tm tm_end = {};
+    istringstream iss_start("Jan 01, 2022");
+    istringstream iss_end("Dec 31, 2022");
+    iss_start >> std::get_time(&tm_start, "%b %d, %Y");
+    iss_end >> std::get_time(&tm_end, "%b %d, %Y");
+    time_t start_time = std::mktime(&tm_start);
+    time_t end_time = std::mktime(&tm_end);
+
+    // Generate random time_t within the specified range
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<std::time_t> distrib(start_time, end_time);
+    time_t random_time = distrib(gen);
+
+    // Convert random time_t to string in the format "MM DD, YYYY"
+    char buffer[100];
+    strftime(buffer, sizeof(buffer), "%b %d, %Y", localtime(&random_time));
+    return string(buffer);
+}
 
 string getRandomBirthSeason()
 {
-    std::vector<std::string> seasons = {"Winter", "Spring", "Summer", "Autumn"};
+    vector<string> seasons = {"Winter", "Spring", "Summer", "Autumn"};
 
     // Initialize random number generator
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_int_distribution<> dis(0, 3);
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> dis(0, 3);
 
     // Generate a random index for the seasons vector
     int randomIndex = dis(gen);
@@ -79,7 +108,7 @@ string calcBirthdate(int years, string season)
 }
 int main()
 {
-    cout << "Welcome to Dennis's Zoo Program!\n";
+    cout << "Welcome to Jose's Zoo Program!\n";
     // Initialize variables used to find data elements in text string.
     int lineNum = 0;
     int position = 0;
@@ -98,6 +127,7 @@ int main()
     int numOfLions = 0;
     int numOfTigers = 0;
     int numOfBears = 0;
+
     // Open arrivingAnimals.txt for input to our program.
     string line;
     ifstream myAnimalFile("arrivingAnimals.txt");
@@ -116,6 +146,7 @@ int main()
     }
     // If you open a file, you must close it.
     myAnimalFile.close();
+
     // Make sure you are reading the file. You will see 16 lines in your output
     // window.If
     // you do not see the 16 arriving animals, fix this before you go on.
@@ -299,6 +330,9 @@ int main()
     // will be one line of the
     // arrivingAnimals.txt file.
     // Process each line of the array
+    // Create a file output stream and open the file for writing
+    ofstream outputFile("myOutput.txt");
+
     for (int lineNum = 0; lineNum < 16; lineNum++)
     {
 
@@ -353,9 +387,102 @@ int main()
         endPos = arrAnimals[lineNum].find(",", startPos);
         species = arrAnimals[lineNum].substr(startPos, endPos - startPos);
         cout << "\n species is..." << species;
-        cout << endl
-             << endl;
+        // Now that we have a species, update the global variable for the species
+        // count (we will get rid
+        //  of this when we code this up with classes and lists) and get a uniqueID.
+        if (species == "hyena")
+        {
+            numOfHyenas++;
+            uniqueID = genUniqueID("hyena", numOfHyenas);
+        }
+        else if (species == "lion")
+        {
+            numOfLions++;
+            uniqueID = genUniqueID("lion", numOfLions);
+        }
+        else if (species == "tiger")
+        {
+            numOfTigers++;
+            uniqueID = genUniqueID("tiger", numOfTigers);
+        }
+        else if (species == "bear")
+        {
+            numOfBears++;
+            uniqueID = genUniqueID("bear", numOfBears);
+        }
+        else
+        {
+            // error
+        }
+        cout << "\n uniqueID is..." << uniqueID;
+        // At this point we have sex, species, uniqueID, and birthDate
+        // now we only need: name, color, weight, origin, arrival date
+        // for name, we need species and numOfSpecies
+        if (species == "hyena")
+        {
+            name = hyenaNames[numOfHyenas - 1];
+        }
+        else if (species == "lion")
+        {
+            name = lionNames[numOfLions - 1];
+        }
+        else if (species == "tiger")
+        {
+            name = tigerNames[numOfTigers - 1];
+        }
+        else if (species == "bear")
+        {
+            name = bearNames[numOfBears - 1];
+        }
+        else
+        {
+            // error
+        }
+        cout << "\n name is: " << name;
+        // for color, we need to split our string on commas and find where color is.
+        // Find color
+        // How many char spaces to the comma?
+        position = arrAnimals[lineNum].find(",");
+        position = arrAnimals[lineNum].find(",", position + 1);
+        startPos = position + 1;
+        // find the end position
+        endPos = arrAnimals[lineNum].find(",", startPos);
+        color = arrAnimals[lineNum].substr(startPos, endPos - startPos);
+        cout << "\n color is..." << color;
+        // for weight, we need to split our string on commas and find where weight
+        // is.
+        //  Find weight
+        //  How many char spaces to the comma?
+        position = arrAnimals[lineNum].find(",");
+        position = arrAnimals[lineNum].find(",", position + 1);
+        position = arrAnimals[lineNum].find(",", position + 1);
+        startPos = position + 1;
+        // find the end position
+        endPos = arrAnimals[lineNum].find(",", startPos);
+        weight = arrAnimals[lineNum].substr(startPos, endPos - startPos);
+        cout << "\n weight is..." << weight;
+        // for origin, we need to split our string on commas and find where origin
+        // is.
+        //  Find origin
+        //  How many char spaces to the comma?
+        position = arrAnimals[lineNum].find(",");
+        position = arrAnimals[lineNum].find(",", position + 1);
+        position = arrAnimals[lineNum].find(",", position + 1);
+        position = arrAnimals[lineNum].find(",", position + 1);
+        startPos = position + 1;
+        // find the end position
+        origin = arrAnimals[lineNum].substr(startPos);
+        cout << "\n origin is..." << origin;
+        cout << "\n\n";
 
-        
+        string randomArrivalDate = getRandomArrivalDate();
+
+        string outputLine = uniqueID + "; " + name + "; " + to_string(numYears) + " years old; " + "birth date " + birthDay + ";" + color + "; " + sex + ";" + weight +
+                            origin + "; " + "arrived " + randomArrivalDate + ";";
+
+        cout << "\n outputLine = " << outputLine << "\n\n";
+
+        outputFile << outputLine << endl;
     }
+    outputFile.close();
 }
