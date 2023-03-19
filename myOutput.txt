@@ -1,16 +1,24 @@
-Hy01; Shenzi; 4 years old; birth date Mar 21, 2019; tan color; female; 70 pounds from Friguia Park, Tunisia; arrived Feb 26, 2022;
-Hy02; Banzai; 12 years old; birth date Sep 21, 2011; brown color; male; 150 pounds from Friguia Park, Tunisia; arrived Nov 02, 2022;
-Hy03; Ed; 4 years old; birth date Mar 21, 2019; black color; male; 120 pounds from Friguia Park, Tunisia; arrived Apr 17, 2022;
-Hy04; Zig; 8 years old; birth date Jan 1, 2015; black and tan striped color; female; 105 pounds from Friguia Park, Tunisia; arrived Aug 01, 2022;
-Li01; Scar; 6 years old; birth date Mar 21, 2017; tan color; female; 300 pounds from Zanzibar, Tanzania; arrived Sep 04, 2022;
-Li02; Mufasa; 12 years old; birth date Dec 21, 2011; dark tan color; female; 375 pounds from KopeLion, Tanzania; arrived Oct 21, 2022;
-Li03; Simba; 22 years old; birth date Sep 21, 2001; golden color; male; 450 pounds from Zanzibar, Tanzania; arrived Jul 01, 2022;
-Li04; Kiara; 4 years old; birth date Mar 21, 2019; tan and brown color; female; 275 pounds from KopeLion, Tanzania; arrived May 01, 2022;
-Ti01; Tony; 2 years old; birth date Mar 21, 2021; gold and tan stripes color; male; 270 pounds from Dhaka, Bangladesh; arrived Oct 21, 2022;
-Ti02; Tigger; 4 years old; birth date Mar 21, 2019; black stripes color; female; 400 pounds from Dhaka, Bangladesh; arrived Sep 29, 2022;
-Ti03; Amber; 18 years old; birth date Sep 21, 2005; gold and tan color; male; 300 pounds from Bardia, Nepal; arrived Jan 02, 2022;
-Ti04; Cosimia; 3 years old; birth date Mar 21, 2020; black stripes color; female; 285 pounds from Bardia, Nepal; arrived Mar 02, 2022;
-Be01; Yogi; 7 years old; birth date Mar 21, 2016; brown color; male; 320 pounds from Alaska Zoo, Alaska; arrived Aug 02, 2022;
-Be02; Smokey; 25 years old; birth date Mar 21, 1998; black color; female; 425 pounds from Woodland park Zoo, Washington ; arrived Jun 17, 2022;
-Be03; Paddington; 4 years old; birth date Sep 21, 2019; black color; female; 355 pounds from Woodland park Zoo, Washington ; arrived Feb 10, 2022;
-Be04; Lippy; 4 years old; birth date Mar 21, 2019; brown color; male; 405 pounds from Alaska Zoo, Alaska; arrived Jul 22, 2022;
+Hyena habitat:
+Hy01; Shenzi; 4 years old; birth date Mar 21, 2019; tan color; female; 70 pounds from Friguia Park, Tunisia; arrived May 08, 2022;
+Hy02; Banzai; 12 years old; birth date Sep 21, 2011; brown color; male; 150 pounds from Friguia Park, Tunisia; arrived May 21, 2022;
+Hy03; Ed; 4 years old; birth date Mar 21, 2019; black color; male; 120 pounds from Friguia Park, Tunisia; arrived Jun 14, 2022;
+Hy04; Zig; 8 years old; birth date Jan 1, 2015; black and tan striped color; female; 105 pounds from Friguia Park, Tunisia; arrived Feb 27, 2022;
+
+Lion habitat:
+Li01; Scar; 6 years old; birth date Mar 21, 2017; tan color; female; 300 pounds from Zanzibar, Tanzania; arrived Dec 06, 2022;
+Li02; Mufasa; 12 years old; birth date Dec 21, 2011; dark tan color; female; 375 pounds from KopeLion, Tanzania; arrived Mar 18, 2022;
+Li03; Simba; 22 years old; birth date Sep 21, 2001; golden color; male; 450 pounds from Zanzibar, Tanzania; arrived Feb 19, 2022;
+Li04; Kiara; 4 years old; birth date Mar 21, 2019; tan and brown color; female; 275 pounds from KopeLion, Tanzania; arrived Oct 26, 2022;
+
+Tiger habitat:
+Ti01; Tony; 2 years old; birth date Mar 21, 2021; gold and tan stripes color; male; 270 pounds from Dhaka, Bangladesh; arrived May 13, 2022;
+Ti02; Tigger; 4 years old; birth date Mar 21, 2019; black stripes color; female; 400 pounds from Dhaka, Bangladesh; arrived Aug 24, 2022;
+Ti03; Amber; 18 years old; birth date Sep 21, 2005; gold and tan color; male; 300 pounds from Bardia, Nepal; arrived Apr 30, 2022;
+Ti04; Cosimia; 3 years old; birth date Mar 21, 2020; black stripes color; female; 285 pounds from Bardia, Nepal; arrived Sep 01, 2022;
+
+Bear habitat:
+Be01; Yogi; 7 years old; birth date Mar 21, 2016; brown color; male; 320 pounds from Alaska Zoo, Alaska; arrived Dec 04, 2022;
+Be02; Smokey; 25 years old; birth date Mar 21, 1998; black color; female; 425 pounds from Woodland park Zoo, Washington ; arrived Jan 21, 2022;
+Be03; Paddington; 4 years old; birth date Sep 21, 2019; black color; female; 355 pounds from Woodland park Zoo, Washington ; arrived Aug 28, 2022;
+Be04; Lippy; 4 years old; birth date Mar 21, 2019; brown color; male; 405 pounds from Alaska Zoo, Alaska; arrived Aug 16, 2022;
+

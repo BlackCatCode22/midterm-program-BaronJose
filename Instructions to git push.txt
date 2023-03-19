@@ -1,0 +1,7 @@
+git init
+eval "$(ssh-agent -s)"
+ssh-add /c/directory/mykey
+git add .
+git status
+git commit -m 'Message'
+git push -u origin main

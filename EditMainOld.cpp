@@ -115,7 +115,6 @@ int main()
     int startPos = 0;
     int endPos = 0;
     int numYears = 0;
-    int lineCount = 0;
     string birthSeason = "";
     string birthDay = "";
     string sex = "";
@@ -123,9 +122,7 @@ int main()
     string species = "";
     string color = "";
     string outputLine = "";
-    string habitat = "";
     // Create global variables for the number of each species.
-
     int numOfHyenas = 0;
     int numOfLions = 0;
     int numOfTigers = 0;
@@ -478,42 +475,14 @@ int main()
         cout << "\n origin is..." << origin;
         cout << "\n\n";
 
-        // Find Habitat Name
-        int position3 = arrAnimals[lineNum].find(" ");
-        position3 = arrAnimals[lineNum].find(" ", position3 + 1);
-        position3 = arrAnimals[lineNum].find(" ", position3 + 1);
-        position3 = arrAnimals[lineNum].find(" ", position3 + 1);
-        startPos = position3 + 1;
-        // find the end position
-        endPos = arrAnimals[lineNum].find(",", startPos);
-
-        string currentHabitat = arrAnimals[lineNum].substr(startPos, endPos - startPos);
-        currentHabitat[0] = toupper(currentHabitat[0]); // Capitalize the first letter
-
         string randomArrivalDate = getRandomArrivalDate();
 
-        // If we're on the first line or a multiple of 4, output the habitat
-        if (lineCount == 0 || lineCount % 4 == 0)
-        {
-            habitat = currentHabitat;
-            outputFile << habitat << " habitat:" << std::endl;
-        }
-
-        // Output the animal information for this line
         string outputLine = uniqueID + "; " + name + "; " + to_string(numYears) + " years old; " + "birth date " + birthDay + ";" + color + "; " + sex + ";" + weight +
-                            origin + "; " + "arrived " + randomArrivalDate + ";" + "\n";
-        outputFile << outputLine;
+                            origin + "; " + "arrived " + randomArrivalDate + ";";
 
-        // Output a blank line before and after every fourth line
-        if ((lineCount + 1) % 4 == 0)
-        {
-            outputFile << std::endl;
-        }
+        cout << "\n outputLine = " << outputLine << "\n\n";
 
-        // Increment the line count
-        lineCount++;
-
-        cout << outputLine;
+        outputFile << outputLine << endl;
     }
     outputFile.close();
 }
